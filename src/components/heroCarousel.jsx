@@ -39,8 +39,8 @@ const HeaderCarousel = () => {
     autoplaySpeed: 4000,
     // fade: true,
     arrows: true,
-    nextArrow: <NextArrow/>,
-    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (

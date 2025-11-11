@@ -63,7 +63,7 @@
 
 import React, { useEffect, useState } from "react";
 import WOW from "wowjs";
-
+import logo from '../assets/img/logo.png'
 
 const Navbar = () => {
   const [loading, setLoading] = useState(true);
@@ -154,13 +154,13 @@ useEffect(() => {
               </div>
             </div>
             <div className="col-lg-4 text-center text-lg-end">
-              <div className="d-flex align-items-center justify-content-end">
+              <div className="d-flex align-items-center justify-content-center">
                 {["facebook-f", "twitter", "instagram", "linkedin-in"].map(
                   (icon) => (
                     <a
                       key={icon}
                       href="#"
-                      className="btn btn-primary btn-square rounded-circle nav-fill me-3"
+                      className="btn btn-primary justify-content-center align-items-center d-flex btn-square rounded-circle nav-fill me-3"
                     >
                       <i className={`fab fa-${icon} text-white`}></i>
                     </a>
@@ -182,7 +182,7 @@ useEffect(() => {
           <nav className="navbar navbar-expand-lg navbar-dark bg-white py-3 px-4">
             <a href="#" className="navbar-brand p-0">
               <img
-                src="img/logo.png"
+                src={logo}
                 style={{ height: "50px", width: "auto" }}
                 alt="Logo"
               />
