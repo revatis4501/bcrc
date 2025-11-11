@@ -12,11 +12,13 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
     "jquery": "^3.7.1",
     "lightbox2": "^2.11.5",
     "owl.carousel": "^2.3.4",
     "react": "^19.1.1",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.1.1",
     "react-owl-carousel": "^2.3.3",
     "react-slick": "^0.31.0",

@@ -505,7 +505,7 @@
 /*** About End ***/
 
 /* Vision Mission start */
-.card-custom {
+.card.card-custom {
   /* border-top: 5px solid; */
   border-radius: 92px;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
@@ -1053,6 +1053,10 @@
   background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
-.text-primary {
+.textprimary {
   color: #3e4095 !important;
+}
+
+.bgprimary {
+  background-color: #3e4095 !important;
 }
