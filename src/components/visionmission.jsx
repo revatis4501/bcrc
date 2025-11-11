@@ -5,18 +5,18 @@ import goal from "../assets/img/goal.png";
 import "../assets/css/style.css"
 const Visionmission = () => {
   return (
-    <div>
+    
       <div className="container-fluid">
-        <div className="container py-5">
+        <div className=" py-5">
           <div
             className="text-center mx-auto pb-5 wow fadeInUp"
             data-aos="fade-up"
             style={{ maxWidth: "800px" }}
           >
-            <h4 className="text-primary">Our Vision/Mission</h4>
+            <h4 className="textprimary">Our Vision/Mission</h4>
             <h1 className="display-4">Explore Our Vision Mission</h1>
           </div>
-          <div className="container py-2">
+          <div className=" py-2">
             <div className="row g-4">
               {/* <!-- Mission --> */}
               <div className="col-12 col-md-6 col-lg-4">
@@ -116,7 +116,7 @@ const Visionmission = () => {
           </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 

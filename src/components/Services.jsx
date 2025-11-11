@@ -5,7 +5,7 @@ import service3 from "../assets/img/service-3.jpg";
 import service4 from "../assets/img/service-4.jpg";
 const Services = () => {
   return (
-    <div>
+    
       <div className="container-fluid service">
         <div className="container py-5">
           <div
@@ -164,7 +164,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 
