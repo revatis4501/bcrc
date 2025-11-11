@@ -3,32 +3,23 @@ import About from "../components/about";
 import Visionmission from "../components/visionmission";
 import Services from "../components/Services";
 import HeaderCarousel from "../components/heroCarousel";
+import Blog from "../components/Blog";
+import OurTeam from "../components/OurTeam";
+import Testimonial from "../components/testimonials";
+import ProjectCarousel from "../components/events";
 
 const Home = () => {
   return (
     <div>
       {/* Homeeee */}
       <HeaderCarousel/>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
-      <h1>hw</h1>
       <About />
       <Visionmission />
-      <Services/>
+      <Services />
+      <ProjectCarousel/>
+      <Blog />
+      <OurTeam />
+      <Testimonial/>
     </div>
   );
 };

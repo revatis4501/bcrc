@@ -39,7 +39,8 @@ const ProjectCarousel = () => {
       img: doorStepImg,
       icon: "fas fa-hand-holding-usd",
       title: "Door Step Banking",
-      description: "CSP providing services under Door Step Banking in Chhatisgarh",
+      description:
+        "CSP providing services under Door Step Banking in Chhatisgarh",
       link: "#",
     },
     {
@@ -73,14 +74,17 @@ const ProjectCarousel = () => {
               <div className="project-content bg-light rounded p-4">
                 <div className="project-content-inner">
                   <div className="project-icon mb-3">
-                    <i className={`${project.icon} fa-4x text-primary`}></i>
+                    <i className={`${project.icon} fa-4x textprimary`}></i>
                   </div>
                   <p className="text-dark fs-5 mb-3">{project.title}</p>
                   <a href={project.link} className="h4">
                     {project.description}
                   </a>
                   <div className="pt-4">
-                    <a className="btn btn-light rounded-pill py-3 px-5" href={project.link}>
+                    <a
+                      className="btn btn-light rounded-pill py-3 px-5"
+                      href={project.link}
+                    >
                       Read More
                     </a>
                   </div>

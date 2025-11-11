@@ -63,54 +63,51 @@
 
 import React, { useEffect, useState } from "react";
 import WOW from "wowjs";
-import logo from '../assets/img/logo.png'
+import logo from "../assets/img/logo.png";
 
 const Navbar = () => {
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  // Spinner hide
-  const timer = setTimeout(() => setLoading(false), 500);
+  useEffect(() => {
+    // Spinner hide
+    const timer = setTimeout(() => setLoading(false), 500);
 
-  // Initialize WOW.js animations
-  new WOW.WOW().init();
+    // Initialize WOW.js animations
+    new WOW.WOW().init();
 
-  // Sticky navbar effect
-  const handleScroll = () => {
-    const container = document.querySelector(".sticky-top .container");
-    if (!container) return;
+    // Sticky navbar effect
+    const handleScroll = () => {
+      const container = document.querySelector(".sticky-top .container");
+      if (!container) return;
 
-    if (window.innerWidth > 992) {
-      if (window.scrollY > 45) {
+      if (window.innerWidth > 992) {
+        if (window.scrollY > 45) {
+          container.classList.add("shadow-sm");
+          container.style.maxWidth = "100%";
+        } else {
+          container.classList.remove("shadow-sm");
+          // 🧠 Reset width to match .topbar container width again
+          const topbarContainer = document.querySelector(".topbar .container");
+          if (topbarContainer) {
+            container.style.maxWidth = `${topbarContainer.offsetWidth}px`;
+          } else {
+            container.style.maxWidth = ""; // fallback to default
+          }
+        }
+      } else {
         container.classList.add("shadow-sm");
         container.style.maxWidth = "100%";
-      } else {
-        container.classList.remove("shadow-sm");
-        // 🧠 Reset width to match .topbar container width again
-        const topbarContainer = document.querySelector(".topbar .container");
-        if (topbarContainer) {
-          container.style.maxWidth = `${topbarContainer.offsetWidth}px`;
-        } else {
-          container.style.maxWidth = ""; // fallback to default
-        }
       }
-    } else {
-      container.classList.add("shadow-sm");
-      container.style.maxWidth = "100%";
-    }
-  };
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  handleScroll(); // call once on mount to ensure consistency
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // call once on mount to ensure consistency
 
-  return () => {
-    clearTimeout(timer);
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
-
-
-  
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -121,7 +118,7 @@ useEffect(() => {
           className="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
         >
           <div
-            className="spinner-border text-primary"
+            className="spinner-border textprimary"
             style={{ width: "3rem", height: "3rem" }}
             role="status"
           >
@@ -140,15 +137,15 @@ useEffect(() => {
             <div className="col-lg-8 text-center text-lg-start mb-lg-0">
               <div className="d-flex flex-wrap">
                 <a href="#" className="text-muted me-4">
-                  <i className="fas fa-map-marker-alt text-primary me-2"></i>
+                  <i className="fas fa-map-marker-alt textprimary me-2"></i>
                   Find A Location
                 </a>
                 <a href="#" className="text-muted me-4">
-                  <i className="fas fa-phone-alt text-primary me-2"></i>+91
+                  <i className="fas fa-phone-alt textprimary me-2"></i>+91
                   9159669599
                 </a>
                 <a href="#" className="text-muted me-0">
-                  <i className="fas fa-envelope text-primary me-2"></i>
+                  <i className="fas fa-envelope textprimary me-2"></i>
                   info@bcrcindia.com
                 </a>
               </div>
