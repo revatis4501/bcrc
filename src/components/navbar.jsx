@@ -131,7 +131,7 @@ useEffect(() => {
       )}
 
       {/* Topbar */}
-      <div className="container-fluid topbar bg-[#102147] px-0 d-none d-lg-block">
+      <div className="container-fluid topbar px-0 d-none d-lg-block">
         <div className="container px-0">
           <div
             className="row gx-0 align-items-center"
