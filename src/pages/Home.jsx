@@ -6,20 +6,21 @@ import HeaderCarousel from "../components/heroCarousel";
 import Blog from "../components/Blog";
 import OurTeam from "../components/OurTeam";
 import Testimonial from "../components/testimonials";
-import ProjectCarousel from "../components/events";
+// import ProjectCarousel   from "../components/events";
+import Events from "../components/events";
 
 const Home = () => {
   return (
     <div>
       {/* Homeeee */}
-      <HeaderCarousel/>
+      <HeaderCarousel />
       <About />
       <Visionmission />
       <Services />
-      <ProjectCarousel/>
+      <Events />
       <Blog />
       <OurTeam />
-      <Testimonial/>
+      <Testimonial />
     </div>
   );
 };

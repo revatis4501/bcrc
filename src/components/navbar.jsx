@@ -64,6 +64,7 @@
 import React, { useEffect, useState } from "react";
 import WOW from "wowjs";
 import logo from "../assets/img/logo.png";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [loading, setLoading] = useState(true);
@@ -195,21 +196,23 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav ms-auto py-0">
                 {[
-                  "Home",
-                  "Events",
-                  "Services",
-                  "Gallery",
-                  "Blog",
-                  "About Us",
-                  "Contact Us",
+                  { name: "Home", path: "/" },
+                  { name: "Events", path: "/events" },
+                  { name: "Services", path: "/services" },
+                  { name: "Gallery", path: "/gallery" },
+                  { name: "Blog", path: "/blog" },
+                  { name: "About Us", path: "/about" },
+                  { name: "Contact Us", path: "/contact" },
                 ].map((text, i) => (
-                  <a
+                  <NavLink
                     key={i}
-                    href="#"
-                    className={`nav-item nav-link ${i === 0 ? "active" : ""}`}
+                    to={text.path}
+                    className={({ isActive }) =>
+                      `nav-item nav-link ${isActive ? "active" : ""}`
+                    }
                   >
-                    {text}
-                  </a>
+                    {text.name}
+                  </NavLink>
                 ))}
               </div>
             </div>

@@ -39,8 +39,8 @@
 }
 
 .btn-sm-square {
-  width: 34px;
-  height: 34px;
+  width: 34px !important;
+  height: 34px !important;
 }
 
 .btn-md-square {
@@ -63,11 +63,11 @@
 .btn-lg-square,
 .btn-xl-square {
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   font-weight: normal;
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .btn.btn-primary {
@@ -254,9 +254,9 @@
   border-radius: 40px;
   background: #3f4196;
   color: var(--bs-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   transition: 0.5s;
 }
 .bg-primary {
@@ -264,6 +264,7 @@
 }
 .owl-prev {
   left: 30px;
+  /* margin-left: -20px !important; */
 }
 
 .owl-next {
@@ -639,14 +640,16 @@
 }
 
 .project .project-carousel .project-item {
-  position: relative;
-  overflow: hidden;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .project .project-carousel .project-item .project-img {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  /* height: 250px; default desktop height */
+  /* object-fit: cover; */
 }
 
 .project .project-carousel .project-item .project-img::after {
@@ -677,9 +680,9 @@
   position: relative;
   width: 75%;
   height: 100%;
-  bottom: 50%;
+  bottom: 50% !important;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
 }
 
@@ -739,8 +742,14 @@
 .project .project-carousel .project-item:hover .project-content::after {
   height: 100%;
 }
+@media (max-width: 768px) {
+  .project .project-carousel .project-item .project-img {
+    height: 250px; /* smaller on mobile */
+    object-fit: cover;
+  }
+}
 
-.project-carousel .owl-dots {
+/* .project-carousel .owl-dots {
   position: absolute;
   width: 100%;
   height: 40px;
@@ -749,23 +758,56 @@
   justify-content: center;
   margin-top: -120px;
   transition: 0.5s;
-}
+} */
 
-.project-carousel .owl-dots .owl-dot {
+/* .project-carousel .owl-dots .owl-dot {
   width: 20px;
   height: 20px;
   border-radius: 20px;
   margin-right: 15px;
   background: var(--bs-dark);
   transition: 0.5s;
-}
+} */
 
-.project-carousel .owl-dots .owl-dot.active {
+/* .project-carousel .owl-dots .owl-dot.active {
   width: 30px;
   height: 30px;
   border-radius: 40px;
   border: 8px solid #3f4196;
+}  */
+/* Swiper pagination styled same as old Owl Carousel dots */
+/* Swiper pagination (custom bullets like image) */
+/* Swiper pagination wrapper */
+/* Pagination container */
+.project-carousel .swiper-pagination {
+  position: absolute !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin-top: -50px !important; /* adjust vertical position */
 }
+
+/* Inactive bullets: empty circle with navy border */
+.project-carousel .swiper-pagination-bullet {
+  width: 14px !important;
+  height: 14px !important;
+  background-color: #0b1840 !important; /* no fill */
+  border: 2px solid #0b1840 !important; /* navy/dark border */
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+}
+
+/* Active bullet: solid dark circle with blue ring */
+.project-carousel .swiper-pagination-bullet-active {
+  background-color: #0b1840 !important; /* solid navy/dark fill */
+  border: none !important;
+  box-shadow: 0 0 0 6px #3f4196 !important; /* blue ring */
+  transform: scale(1.1) !important;
+}
+
 /*** Project End ***/
 
 /*** Blog Start ***/
@@ -953,33 +995,58 @@
 /*** Team End ***/
 
 /*** Testimonial Start ***/
-.testimonial .testimonial-carousel {
-  position: relative;
-}
+/* Container position */
 
-.testimonial .testimonial-carousel .owl-dots {
-  margin-top: 30px;
+/* Dots wrapper */
+/* .testimonial .testimonial-carousel .swiper-pagination {
+  margin-top: -80px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.testimonial .testimonial-carousel .owl-dot {
+} */
+/* Main testimonial section */
+.testimonial {
   position: relative;
-  display: inline-block;
-  margin: 0 5px;
-  width: 15px;
-  height: 15px;
-  background: var(--bs-light);
-  border: 1px solid #3f4196;
-  border-radius: 10px;
-  transition: 0.5s;
+  background-color: #f8f9fa;
+  overflow: hidden; /* Keeps cards neatly inside */
 }
 
-.testimonial .testimonial-carousel .owl-dot.active {
-  width: 40px;
-  background: #3f4196;
+/* Swiper wrapper inside testimonial */
+.testimonial-carousel {
+  position: relative;
+  padding-bottom: 60px; /* Space reserved for visible dots */
+  overflow: hidden; /* Prevent cards from leaking out */
 }
+
+/* Place pagination dots below Swiper content */
+.testimonial-carousel .swiper-pagination {
+  position: absolute;
+  bottom: -20px; /* Show inside reserved space (not truly outside container) */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+/* Dots appearance */
+.testimonial-carousel .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: var(--bs-light);
+  border: 2px solid #3f4196;
+  border-radius: 10px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.testimonial-carousel .swiper-pagination-bullet-active {
+  width: 35px;
+  background: #3f4196;
+  border-color: #3f4196;
+}
+
 /*** Testimonial End ***/
 
 /*** FAQ'S Start ***/
@@ -1078,4 +1145,33 @@
 }
 .display-4 {
   font-size: 3.5rem;
+}
+
+
+
+
+@keyframes fadeInAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnim 0.3s ease-in-out forwards;
+}
+
+.fadeOut {
+  animation: fadeOutAnim 0.3s ease-in-out forwards;
 }
