@@ -5,7 +5,8 @@ const Footer = () => {
     <>
       <div
         className="container-fluid footer py-5 wow fadeIn"
-        data-wow-delay="0.2s"
+        data-aos="fade"
+        data-aos-delay="200"
       >
         <div className="container py-5">
           <div className="row g-5">

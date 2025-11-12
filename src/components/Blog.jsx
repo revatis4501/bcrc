@@ -11,7 +11,7 @@ import bg from "../assets/img/bg.png";
 
 const Blog = () => {
   const [lightboxImg, setLightboxImg] = useState(null);
-
+  const [closing, setClosing] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -124,14 +124,24 @@ const Blog = () => {
       {/* Lightbox Modal */}
       {lightboxImg && (
         <div
-          className="lightbox-overlay position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+          className={`lightbox-overlay position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center ${
+            closing ? "fadeOut" : "fadeIn"
+          }`}
           style={{
             backgroundColor: "rgba(0,0,0,0.8)",
             zIndex: 1050,
+            opacity: 1,
+            animation: "fadeIn 0.3s ease-in-out",
           }}
-          onClick={() => setLightboxImg(null)}
+          onClick={() => {
+            setClosing(true);
+            setTimeout(() => setLightboxImg(null), 300);
+          }}
         >
-          <div className="position-relative">
+          <div
+            className="position-relative d-inline-block"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={lightboxImg}
               alt="Blog"
@@ -142,12 +152,35 @@ const Blog = () => {
                 objectFit: "contain",
               }}
             />
-            <button
-              className="btn btn-light position-absolute top-0 end-0 m-3 rounded-circle"
-              onClick={() => setLightboxImg(null)}
+            <h2
+              className="rounded-circle text-white position-absolute"
+              style={{
+                bottom: "-20px",
+                right: "-20px",
+                width: "40px",
+                height: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                fontSize: "1.2rem",
+                fontWeight: "bold",
+                backgroundColor: "rgba(0,0,0,0.6)",
+                transition: "all 0.2s ease",
+              }}
+              onClick={() => {
+                setClosing(true);
+                setTimeout(() => setLightboxImg(null), 300);
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = "scale(1.2)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = "scale(1)")
+              }
             >
-              <i className="fas fa-times"></i>
-            </button>
+              X
+            </h2>
           </div>
         </div>
       )}

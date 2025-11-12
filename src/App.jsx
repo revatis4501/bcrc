@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import "./assets/css/style.css";
 import Navbar from "./components/navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop";
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/ContactPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,23 +26,35 @@ function App() {
 
 //    setTimeout(() => AOS.refresh(), 500);
   //  }, []);
-  useEffect(() => {
-    AOS.refresh();
-  }, []);
-    useEffect(() => {
-      AOS.init({
-        duration: 1000,
-        once: true, 
-        offset: 100, 
-      });
+useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100,
+    easing: "ease-in-out",
+  });
 
-      window.addEventListener("load", () => AOS.refresh());
-    }, []);
+  window.addEventListener("load", AOS.refresh);
+  return () => {
+    window.removeEventListener("load", AOS.refresh);
+  };
+}, []);
+
   return (
     <>
-      <Navbar />
-      <Home />
-      <Footer/>
+      <Router>
+        <ScrollToTop/>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+
+          {/* Add more routes as needed */}
+        </Routes>
+        <Footer />
+        <BackToTop />
+      </Router>
     </>
   );
 }
