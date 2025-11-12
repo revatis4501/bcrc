@@ -56,14 +56,17 @@ const ProjectCarousel = () => {
   return (
     <div className="container-fluid project">
       <div className="container">
-        <div className="text-center mx-auto pb-5" style={{ maxWidth: "800px" }}>
+        <div className="text-center mx-auto pb-5" style={{ maxWidth: "800px" }} data-aos="fade-up"
+          data-aos-delay="100">
           <h4 className="textprimary">Latest Events</h4>
           <h1 className="display-4">Explore Our Latest Events</h1>
         </div>
 
-        <Slider {...settings} className="project-carousel">
+        <Slider {...settings} className="project-carousel" data-aos="fade-up"
+          data-aos-delay="100">
           {projects.map((project, index) => (
-            <div key={index} className="project-item h-100 p-3">
+            <div key={index} className="project-item h-100 p-3" data-aos="fade-up"
+              data-aos-delay="100">
               <div className="project-img">
                 <img
                   src={project.img}
