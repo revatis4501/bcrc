@@ -8,7 +8,11 @@ const ContactPage = () => {
       <div className="container-fluid contact bg-light py-5">
         <div className="container py-5">
           <div className="row g-5">
-            <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+            <div
+              className="col-lg-6"
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
               <div className="contact-item">
                 <div className="pb-5">
                   <h4 className="text-primary">Contact Us</h4>
@@ -58,7 +62,11 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+            <div
+              className="col-lg-6 "
+              data-aos="fade-left"
+              data-aos-delay="100"
+            >
               <form>
                 <div className="row g-3">
                   <div className="col-lg-12 col-xl-6">
@@ -144,7 +152,6 @@ const ContactPage = () => {
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
-               
 
                 <div className="d-flex align-items-center justify-content-center bg-primary rounded-bottom p-4">
                   <div className="d-flex">
