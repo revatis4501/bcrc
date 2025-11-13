@@ -10,6 +10,7 @@ const Visionmission = () => {
         <div
           className="text-center mx-auto pb-5 wow fadeInUp"
           data-aos="fade-up"
+          data-aos-delay="100"
           style={{ maxWidth: "800px" }}
         >
           <h4 className="textprimary">Our Vision/Mission</h4>

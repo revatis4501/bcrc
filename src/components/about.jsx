@@ -6,39 +6,35 @@ import Aos from "aos";
 import "aos/dist/aos.css"; // ✅ Import AOS CSS for animations
 
 const About = () => {
-  useEffect(() => {
-    Aos.init({ duration: 1000, once: true });
-  }, []);
+  // useEffect(() => {
+  //   Aos.init({ duration: 1000, once: true });
+  // }, []);
 
   return (
     <div className="container-fluid about bg-light py-5">
       <div className="container pb-2">
         <div className="row g-5 align-items-center">
           {/* LEFT IMAGES SECTION */}
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-12">
             <div data-aos="fade-right" data-aos-delay="100">
               <img src={about2} className="w-100 mb-3 rounded" alt="About 1" />
-              <img
-                src={about3}
-                className="w-100 rounded"
-                alt="About 2"
-              />
+              <img src={about3} className="w-100 rounded" alt="About 2" />
             </div>
           </div>
 
           {/* RIGHT TEXT SECTION */}
-          <div className="col-lg-8">
+          <div className="col-lg-8 col-12">
             <h4
               className="textprimary"
-              data-aos="fade-left"
-              data-aos-delay="100"
+              // data-aos="fade-left"
+              // data-aos-delay="100"
             >
               About BCRC
             </h4>
             <h1
               className="display-5 mb-4"
-              data-aos="fade-left"
-              data-aos-delay="200"
+              // data-aos="fade-left"
+              // data-aos-delay="200"
             >
               The most Profitable Investments company in worldwide.
             </h1>

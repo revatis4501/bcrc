@@ -48,8 +48,9 @@ const Blog = () => {
       <div className="container pb-5">
         {/* Section Header */}
         <div
-          class="text-center mx-auto pb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
+          class="text-center mx-auto pb-5"
+          data-aos="fade-up"
+          data-aos-delay="100"
           style={{ maxWidth: "800px" }}
         >
           <h4 class="textprimary">Our Blogs</h4>

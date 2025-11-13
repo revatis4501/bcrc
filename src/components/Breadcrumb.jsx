@@ -7,13 +7,15 @@ const Breadcrumb = (props) => {
       <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
         <h4
           className="text-white display-4 mb-4 wow fadeInDown"
-          data-wow-delay="0.1s"
+          data-aos="fade-down"
+          data-aos-delay="100"
         >
           {props.Title}
         </h4>
         <ol
           className="breadcrumb justify-content-center mb-0 wow fadeInDown"
-          data-wow-delay="0.3s"
+          data-aos="fade-down"
+          data-aos-delay="300"
         >
           <li className="breadcrumb-item">
             <a href="index.html">Home</a>
